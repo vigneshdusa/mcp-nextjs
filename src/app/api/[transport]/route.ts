@@ -25,9 +25,12 @@ const handler = createMcpHandler(
     },
   },
   {
-    redisUrl: process.env.REDIS_URL,
+    redisUrl: process.env.REDIS_URL || "redis://127.0.0.1:6379",
     verboseLogs: true,
-    maxDuration: 60
+    maxDuration: 60,
+    streamableHttpEndpoint: '/api/mcp',
+    sseEndpoint: '/api/sse',
+    basePath: '/api'
   }
 );
  

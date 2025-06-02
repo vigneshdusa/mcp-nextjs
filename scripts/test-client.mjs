@@ -2,9 +2,10 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
 
 const origin = "https://mcp-nextjs-rose.vercel.app";
+// const origin = "http://localhost:3000";
 
 async function main() {
-  const transport = new SSEClientTransport(new URL(`${origin}/sse`));
+  const transport = new SSEClientTransport(new URL(`${origin}/api/sse`));
 
   const client = new Client(
     {
